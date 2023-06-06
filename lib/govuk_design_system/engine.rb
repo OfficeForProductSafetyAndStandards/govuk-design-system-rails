@@ -7,6 +7,8 @@ module GovukDesignSystem
         # NOTE: These includes make the helpers available in every view of the
         #   consuming application. If a helper is not listed here, it will be
         #   isolated, and unavailable to apps which use this gem.
+        Dir[GovukDesignSystem::Engine.root.join("app", "helpers", "govuk_design_system", "*.rb")].sort.each { |f| require f }
+
         ActionView::Base.include GovukDesignSystem::AccordionHelper
         ActionView::Base.include GovukDesignSystem::BackLinkHelper
         ActionView::Base.include GovukDesignSystem::BreadcrumbsHelper
