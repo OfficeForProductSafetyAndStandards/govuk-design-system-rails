@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "compare-xml", "~> 0.66"
   s.add_development_dependency "erb_lint", "~> 0.9.0"
   s.add_development_dependency "nokogiri", "~> 1.18.8"
-  s.add_development_dependency "rails", "~> 6.1.7.9"
+  s.add_development_dependency "rails", "~> 7.1.0"
   s.add_development_dependency "rspec-rails", "~> 6.0.1"
   s.add_development_dependency "rubocop", "~> 1.75.3"
   s.add_development_dependency "rubocop-govuk", "~> 5.1.5"
