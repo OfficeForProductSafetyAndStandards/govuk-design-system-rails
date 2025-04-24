@@ -2,7 +2,7 @@ $LOAD_PATH.push File.expand_path("lib", __dir__)
 
 Gem::Specification.new do |s|
   s.name = "govuk-design-system-rails"
-  s.version = "0.10.5"
+  s.version = "0.10.6"
   s.authors = %w[govuk-ruby]
   s.summary = "An implementation of the govuk-frontend macros in Ruby on Rails"
   s.homepage = "https://github.com/govuk-ruby/govuk-design-system-rails"
@@ -19,14 +19,14 @@ Gem::Specification.new do |s|
   s.required_ruby_version = ">= 2.7.0"
 
   s.add_development_dependency "compare-xml", "~> 0.66"
-  s.add_development_dependency "erb_lint", "~> 0.3.1"
-  s.add_development_dependency "nokogiri", "~> 1.14.2"
-  s.add_development_dependency "rails", "~> 6.1.6", ">= 6.1.6.1"
+  s.add_development_dependency "erb_lint", "~> 0.9.0"
+  s.add_development_dependency "nokogiri", "~> 1.18.8"
+  s.add_development_dependency "rails", "~> 6.1.7.9"
   s.add_development_dependency "rspec-rails", "~> 6.0.1"
-  s.add_development_dependency "rubocop", "~> 1.44.1"
-  s.add_development_dependency "rubocop-govuk", "~> 4.10.0"
-  s.add_development_dependency "rubocop-performance", "~> 1.16.0"
-  s.add_development_dependency "rubocop-rspec", "~> 2.18.1"
-  s.add_development_dependency "sqlite3", "~> 1.6.1"
-  s.add_development_dependency "super_diff", "~> 0.9.0"
+  s.add_development_dependency "rubocop", "~> 1.75.3"
+  s.add_development_dependency "rubocop-govuk", "~> 5.1.5"
+  s.add_development_dependency "rubocop-performance", "~> 1.25.0"
+  s.add_development_dependency "rubocop-rspec", "~> 3.6.0"
+  s.add_development_dependency "sqlite3", "~> 2.6.0"
+  s.add_development_dependency "super_diff", "~> 0.15.0"
 end
