@@ -3,9 +3,9 @@ require "rails_helper"
 RSpec.describe GovukDesignSystem::ButtonHelper, type: :helper do
   describe "#govukButton" do
     it "returns the correct HTML for the default example" do
-      html = helper.govukButton({
+      html = helper.govukButton(
         text: "Save and continue"
-      })
+      )
 
       expect(html).to match_html(<<~HTML)
         <button class="govuk-button" data-module="govuk-button">
@@ -15,11 +15,11 @@ RSpec.describe GovukDesignSystem::ButtonHelper, type: :helper do
     end
 
     it "produces start buttons with an href as link" do
-      html = helper.govukButton({
+      html = helper.govukButton(
         text: "Start now",
         href: "#",
         isStartButton: true
-      })
+      )
 
       expect(html).to match_html(<<~HTML)
         <a href="#" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">

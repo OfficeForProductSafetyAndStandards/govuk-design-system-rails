@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe GovukDesignSystem::SelectHelper, type: :helper do
   describe "#govukSelect" do
     it "returns the correct HTML for the default example" do
-      html = helper.govukSelect({
+      html = helper.govukSelect(
         id: "sort",
         name: "sort",
         label: {
@@ -28,7 +28,7 @@ RSpec.describe GovukDesignSystem::SelectHelper, type: :helper do
             text: "Most comments"
           }
         ]
-      })
+      )
 
       expect(html).to match_html(<<~HTML)
         <div class="govuk-form-group">
@@ -46,7 +46,7 @@ RSpec.describe GovukDesignSystem::SelectHelper, type: :helper do
     end
 
     it "allows attributes to be passed" do
-      html = helper.govukSelect({
+      html = helper.govukSelect(
         id: "sort",
         name: "sort",
         label: {
@@ -67,7 +67,7 @@ RSpec.describe GovukDesignSystem::SelectHelper, type: :helper do
           disabled: true,
           data: { test: "testing" }
         }
-      })
+      )
 
       expect(html).to match_html(<<~HTML)
         <div class="govuk-form-group">
@@ -83,7 +83,7 @@ RSpec.describe GovukDesignSystem::SelectHelper, type: :helper do
     end
 
     it "returns the correct HTML when the select element is an autocomplete element" do
-      html = helper.govukSelect({
+      html = helper.govukSelect(
         id: "sort",
         name: "sort",
         label: {
@@ -109,7 +109,7 @@ RSpec.describe GovukDesignSystem::SelectHelper, type: :helper do
           }
         ],
         is_autocomplete: true
-      })
+      )
 
       expect(html).to match_html(<<~HTML)
         <div class="govuk-form-group">
@@ -124,10 +124,10 @@ RSpec.describe GovukDesignSystem::SelectHelper, type: :helper do
               <option value="comments">Most comments</option>
             </select>
           </div>
-            <script nonce="true">
-            // <![CDATA[
-              window.callAutocompleteWhenReady("sort", { showAllValues: null });
-            // ]]>
+          <script>
+          //<![CDATA[
+            window.callAutocompleteWhenReady("sort", {showAllValues: ""});
+          //]]>
           </script>
         </div>
       HTML

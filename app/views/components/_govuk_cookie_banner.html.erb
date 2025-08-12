@@ -41,13 +41,13 @@
             <% (message[:actions] || []).each do |action| %>
               <% if action[:href].present? %>
                 <% if action[:type] == "button" %>
-                  <%= govukButton({
-                        "text": action[:text],
-                        "type": "button",
-                        "classes": action[:classes] || [],
-                        "href": action[:href],
-                        "attributes": action[:attributes] || {}
-                      }) %>
+                  <%= govukButton(
+                        text: action[:text],
+                        type: "button",
+                        classes: action[:classes] || [],
+                        href: action[:href],
+                        attributes: action[:attributes] || {}
+                      ) %>
                 <% else %>
                   <%
                     link_attributes = {
@@ -57,14 +57,14 @@
                   <%= tag.a action[:text], href: action[:href], **link_attributes %>
                 <% end %>
               <% else %>
-                <%= govukButton({
-                      "text": action[:text],
-                      "value": action[:value],
-                      "name": action[:name],
-                      "type": action[:type],
-                      "classes": action[:classes] || [],
-                      "attributes": action[:attributes] || {}
-                    }) %>
+                <%= govukButton(
+                      text: action[:text],
+                      value: action[:value],
+                      name: action[:name],
+                      type: action[:type],
+                      classes: action[:classes] || [],
+                      attributes: action[:attributes] || {}
+                    ) %>
               <% end %>
             <% end %>
           </div>
