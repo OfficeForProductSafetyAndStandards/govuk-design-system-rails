@@ -13,7 +13,7 @@ module GovukDesignSystem
       content_tag("div", attributes) do
         content_tag("p", { class: "govuk-phase-banner__content" }) do
           concat govukTag(text: tag[:text], html: tag[:html], classes: "govuk-phase-banner__content__tag #{tag[:classes]}")
-          concat content_tag("span", (html || text), { class: "govuk-phase-banner__text" })
+          concat content_tag("span", html || text, { class: "govuk-phase-banner__text" })
         end
       end
     end
