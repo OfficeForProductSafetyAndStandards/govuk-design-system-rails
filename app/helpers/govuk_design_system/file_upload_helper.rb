@@ -14,7 +14,7 @@ module GovukDesignSystem
       described_by ||= ""
 
       content_tag("div", class: form_group_classes) do
-        concat govukLabel(html: label[:html], text: label[:text], classes: label[:classes], isPageHeading: label[:isPageHeading], attributes: (label[:attributes] || {}), for: id)
+        concat govukLabel(html: label[:html], text: label[:text], classes: label[:classes], isPageHeading: label[:isPageHeading], attributes: label[:attributes] || {}, for: id)
 
         if hint
           hint_id = "#{id}-hint"

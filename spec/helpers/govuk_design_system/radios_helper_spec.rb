@@ -136,7 +136,7 @@ RSpec.describe GovukDesignSystem::RadiosHelper, type: :helper do
     end
 
     it "returns the correct HTML when there is a conditional" do
-      email_htmltml = helper.govukInput({
+      email_html = helper.govukInput({
         id: "contact-by-email",
         name: "contact-by-email",
         type: "email",
@@ -170,7 +170,7 @@ RSpec.describe GovukDesignSystem::RadiosHelper, type: :helper do
         }
       })
 
-      helper.govukRadios({
+      html = helper.govukRadios({
         idPrefix: "contact",
         name: "contact",
         fieldset: {
@@ -188,7 +188,7 @@ RSpec.describe GovukDesignSystem::RadiosHelper, type: :helper do
             value: "email",
             text: "Email",
             conditional: {
-              html: email_htmltml
+              html: email_html
             }
           },
           {
@@ -207,6 +207,50 @@ RSpec.describe GovukDesignSystem::RadiosHelper, type: :helper do
           }
         ]
       })
+
+      expect(html).to match_html(<<~HTML)
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                How would you prefer to be contacted?
+              </h1>
+            </legend>
+            <div id="contact-hint" class="govuk-hint">
+              Select one option.
+            </div>
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-1" name="contact" type="radio" value="email" data-aria-controls="conditional-contact-1">
+                <label class="govuk-label govuk-radios__label" for="contact-1">
+                  Email
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-1">
+                #{email_html}
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  Phone
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                #{phone_html}
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
+                <label class="govuk-label govuk-radios__label" for="contact-3">
+                  Text message
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+                #{text_html}
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      HTML
     end
 
     it "returns the correct HTML when there is a fieldset css class" do
