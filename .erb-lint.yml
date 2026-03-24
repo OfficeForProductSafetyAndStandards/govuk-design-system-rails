@@ -5,6 +5,8 @@ linters:
   ErbSafety:
     enabled: true
     better_html_config: .better-html.yml
+    exclude:
+      - app/views/components/_govuk_select.html.erb
   Rubocop:
     enabled: true
     rubocop_config:

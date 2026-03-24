@@ -9,7 +9,7 @@
     <% if row %>
       <%
         this_row_has_actions = row.dig(:actions, :items)&.any?
-        row_classes = class_names("govuk-summary-list__row", { "govuk-summary-list__row--no-actions" => (any_row_has_actions && !this_row_has_actions) }, row[:classes])
+        row_classes = class_names("govuk-summary-list__row", { "govuk-summary-list__row--no-actions" => any_row_has_actions && !this_row_has_actions }, row[:classes])
       %>
       <div class="<%= row_classes %>">
         <dt class="<%= class_names("govuk-summary-list__key", row.dig(:key, :classes)) %>">

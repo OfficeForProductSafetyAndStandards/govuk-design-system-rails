@@ -1,7 +1,7 @@
 <%
   div_attributes = {
     class: class_names("govuk-cookie-banner", local_assigns[:classes]),
-    "aria-label" => (local_assigns[:ariaLabel].presence || "Cookie banner"),
+    "aria-label" => local_assigns[:ariaLabel].presence || "Cookie banner",
     role: "region"
   }.merge!(local_assigns[:attributes] || {})
   div_attributes[:data] ||= {}
