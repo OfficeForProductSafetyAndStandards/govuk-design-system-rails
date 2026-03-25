@@ -119,14 +119,14 @@ RSpec.describe GovukDesignSystem::SelectHelper, type: :helper do
           <div class="">
             <select class="govuk-select" id="sort" name="sort">
               <option value="published">Recently published</option>
-              <option value="updated" selected="selected">Recently updated</option>
+              <option selected="selected" value="updated">Recently updated</option>
               <option value="views">Most views</option>
               <option value="comments">Most comments</option>
             </select>
           </div>
-          <script>
+          <script nonce="">
           //<![CDATA[
-            window.callAutocompleteWhenReady("sort", {showAllValues: ""});
+            window.callAutocompleteWhenReady("sort", {showAllValues: null});
           //]]>
           </script>
         </div>

@@ -97,9 +97,12 @@
       </button>
     <% end %>
 
-    <%= javascript_tag nonce: true do -%>
-      window.callAutocompleteWhenReady("<%= local_assigns[:id] %>", {showAllValues: "<%= local_assigns[:show_all_values] %>"});
-    <% end -%>
+    <script nonce="<%= content_security_policy_nonce %>">
+//<![CDATA[
+      window.callAutocompleteWhenReady(<%== local_assigns[:id].to_json %>, {showAllValues: <%== local_assigns[:show_all_values].to_json %>});
+
+//]]>
+</script>
   <% else %>
     <%= select %>
   <% end %>
