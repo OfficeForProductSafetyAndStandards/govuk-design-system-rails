@@ -28,6 +28,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rubocop-performance", "~> 1.25"
   s.add_development_dependency "rubocop-rspec", "~> 3.6"
   s.add_development_dependency "sprockets-rails", "~> 3.5"
-  s.add_development_dependency "sqlite3", "~> 2.7.0"
+  s.add_development_dependency "sqlite3", "~> 2.9.5"
   s.add_development_dependency "super_diff", "~> 0.16.0"
 end
